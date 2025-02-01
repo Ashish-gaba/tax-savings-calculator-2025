@@ -85,6 +85,8 @@ def format_indian_currency(value):
         return f"₹{formatted_value}"
     except ValueError:
         return "Invalid Input"
+    
+
 
 
 
@@ -319,7 +321,7 @@ if reset:
 
 # Educational Section
 # Expanding with tax slab comparison
-
+st.write("### 📚 Educate Yourself")
 # Tax Slab Comparison
 with st.expander("⚖️ Tax Slab Comparison: New Regime"):
     st.markdown("""
