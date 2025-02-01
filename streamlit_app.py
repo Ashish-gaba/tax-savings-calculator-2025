@@ -301,8 +301,8 @@ if calculate:
     else:
         st.write("### 💸 Summary")
 
-        st.success(f"📊 Tax under Budget 2024-25 : {format_indian_currency(tax_2024)}")
-        st.success(f"📊 Tax under Budget 2025-26: {format_indian_currency(tax_2025)}")
+        st.success(f"📊 Tax under Budget 2024-25 - {format_indian_currency(tax_2024)}")
+        st.success(f"📊 Tax under Budget 2025-26 - {format_indian_currency(tax_2025)}")
         
         st.warning("⚠️ AWW Shucks!!! No tax savings for you under the new regime 😓")
     
