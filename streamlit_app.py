@@ -247,47 +247,47 @@ if calculate:
     st.write("### 📊 Tax Comparison Table")
     st.dataframe(df)
 
-    # **Bar Chart (Tax Comparison)**
-    df_plot = pd.DataFrame({
-        "Category": ["Tax Under 2024-25", "Tax Under 2025-26", "Tax Savings"],
-        "Amount": [tax_2024, tax_2025, savings]
-    })
-
-    fig1 = px.bar(
-        df_plot, x="Category", y="Amount",
-        text="Amount",
-        labels={"Amount": "Tax Amount (₹)"},
-        title="Tax Comparison: Budget 2024-25 vs. Budget 2025-26",
-        color="Category",
-        color_discrete_map={"Tax Under 2024-25": "#FF5733", "Tax Under 2025-26": "#4CAF50", "Tax Savings": "#FFD700"}
-    )
-    fig1.update_traces(texttemplate='%{text:.2s}', textposition='outside')
-    fig1.update_layout(yaxis=dict(title="Tax Amount (₹)"))
-
-    st.plotly_chart(fig1, use_container_width=True)
-
-    # **Pie Chart (Tax Savings)**
-    pie_data = pd.DataFrame({
-        "Category": ["Tax Under 2024-25", "Tax Savings"],
-        "Amount": [tax_2024, savings]
-    })
-    fig2 = px.pie(
-        pie_data, names="Category", values="Amount",
-        title="Tax Savings Proportion",
-        hole=0.4,
-        color="Category",
-        color_discrete_map={"Tax Under 2024-25": "#FF5733", "Tax Savings": "#4CAF50"}
-    )
-    st.plotly_chart(fig2, use_container_width=True)
-
-    st.write("### 💸 Summary")
-
-    st.success(f"📊 Tax under Budget 2024-25 : {format_indian_currency(tax_2024)}")
-    st.success(f"📊 Tax under Budget 2025-26: {format_indian_currency(tax_2025)}")
-
+    
     # Display result message
     if savings > 0:
         st.balloons()
+        # **Bar Chart (Tax Comparison)**
+        df_plot = pd.DataFrame({
+            "Category": ["Tax Under 2024-25", "Tax Under 2025-26", "Tax Savings"],
+            "Amount": [tax_2024, tax_2025, savings]
+        })
+
+        fig1 = px.bar(
+            df_plot, x="Category", y="Amount",
+            text="Amount",
+            labels={"Amount": "Tax Amount (₹)"},
+            title="Tax Comparison: Budget 2024-25 vs. Budget 2025-26",
+            color="Category",
+            color_discrete_map={"Tax Under 2024-25": "#FF5733", "Tax Under 2025-26": "#4CAF50", "Tax Savings": "#FFD700"}
+        )
+        fig1.update_traces(texttemplate='%{text:.2s}', textposition='outside')
+        fig1.update_layout(yaxis=dict(title="Tax Amount (₹)"))
+
+        st.plotly_chart(fig1, use_container_width=True)
+
+        # **Pie Chart (Tax Savings)**
+        pie_data = pd.DataFrame({
+            "Category": ["Tax Under 2024-25", "Tax Savings"],
+            "Amount": [tax_2024, savings]
+        })
+        fig2 = px.pie(
+            pie_data, names="Category", values="Amount",
+            title="Tax Savings Proportion",
+            hole=0.4,
+            color="Category",
+            color_discrete_map={"Tax Under 2024-25": "#FF5733", "Tax Savings": "#4CAF50"}
+        )
+        st.plotly_chart(fig2, use_container_width=True)
+
+        st.write("### 💸 Summary")
+
+        st.success(f"📊 Tax under Budget 2024-25 : {format_indian_currency(tax_2024)}")
+        st.success(f"📊 Tax under Budget 2025-26: {format_indian_currency(tax_2025)}")
         st.success(f"🎉 YAYY!! You Save: {format_indian_currency(savings)}  🎉😍")
 
         # Simulate a delay before showing the funny GIF
@@ -299,7 +299,12 @@ if calculate:
         with col2:
             st.image("https://media1.tenor.com/m/UHTTVFbzDb4AAAAd/modiji-bhangra.gif", width=300)
     else:
-        st.warning("⚠️ AWW Shucks!!! No tax savings for you under the new regime 🥲.")
+        st.write("### 💸 Summary")
+
+        st.success(f"📊 Tax under Budget 2024-25 : {format_indian_currency(tax_2024)}")
+        st.success(f"📊 Tax under Budget 2025-26: {format_indian_currency(tax_2025)}")
+        
+        st.warning("⚠️ AWW Shucks!!! No tax savings for you under the new regime 😓")
     
         # Simulate a delay before showing the funny GIF
         time.sleep(1)
