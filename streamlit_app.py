@@ -174,7 +174,7 @@ st.text_input(
     on_change=update_income,
 )
 
-st.markdown(f"**Formatted Income: {st.session_state['formatted_income']}**")
+st.markdown(f"**Annual Income: {st.session_state['formatted_income']}**")
 
 # Convert formatted income back to integer for calculation
 income = int(st.session_state["formatted_income"].replace("₹", "").replace(",", ""))
