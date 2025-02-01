@@ -286,9 +286,9 @@ if calculate:
 
         st.write("### 💸 Summary")
 
-        st.success(f"📊 Tax under Budget 2024-25 : {format_indian_currency(tax_2024)}")
-        st.success(f"📊 Tax under Budget 2025-26: {format_indian_currency(tax_2025)}")
-        st.success(f"🎉 YAYY!! You Save: {format_indian_currency(savings)}  🎉😍")
+        st.success(f"📊 Tax liable under Budget 2024-25: {format_indian_currency(tax_2024)}")
+        st.success(f"📊 Tax liable under Budget 2025-26: {format_indian_currency(tax_2025)}")
+        st.success(f"🎉 YAYY!! You Save: {format_indian_currency(savings)} in taxes 🎉😍")
 
         # Simulate a delay before showing the funny GIF
         time.sleep(1)
@@ -301,8 +301,8 @@ if calculate:
     else:
         st.write("### 💸 Summary")
 
-        st.success(f"📊 Tax under Budget 2024-25 - {format_indian_currency(tax_2024)}")
-        st.success(f"📊 Tax under Budget 2025-26 - {format_indian_currency(tax_2025)}")
+        st.success(f"📊 Tax under Budget 2024-25: {format_indian_currency(tax_2024)}")
+        st.success(f"📊 Tax under Budget 2025-26: {format_indian_currency(tax_2025)}")
         
         st.warning("⚠️ AWW Shucks!!! No tax savings for you under the new regime 😓")
     
@@ -323,7 +323,7 @@ if reset:
 # Tax Slab Comparison
 with st.expander("⚖️ Tax Slab Comparison: New Regime"):
     st.markdown("""
-    ### Income Tax Slabs for FY 2025-26 vs FY 2024-25
+    ### Income Tax Slabs for FY 2025-26 vs FY 2024-25 (New Regime)
 
     | **Income Range (₹)** | **FY 2025-26 Tax Rate** | **FY 2024-25 Tax Rate** |
     |--------------------|---------------------|-----------------------|
