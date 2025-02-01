@@ -318,16 +318,45 @@ if reset:
     st.rerun()  # Rerun the script to apply changes
 
 # Educational Section
+# Expanding with tax slab comparison
+
+# Tax Slab Comparison
+with st.expander("⚖️ Tax Slab Comparison: New Regime"):
+    st.markdown("""
+    ### Income Tax Slabs for FY 2025-26 vs FY 2024-25
+
+    | **Income Range (₹)** | **FY 2025-26 Tax Rate** | **FY 2024-25 Tax Rate** |
+    |--------------------|---------------------|-----------------------|
+    | 0 - 4 lakh         | **Nil**             | Nil (up to 3L)        |
+    | 4 - 8 lakh         | **5%**              | 5% (3L - 7L)          |
+    | 8 - 12 lakh        | **10%**             | 10% (7L - 10L)        |
+    | 12 - 16 lakh       | **15%**             | 15% (10L - 12L)       |
+    | 16 - 20 lakh       | **20%**             | 20% (12L - 15L)       |
+    | 20 - 24 lakh       | **25%**             | 30% (above 15L)       |
+    | Above 24 lakh      | **30%**             | 30%                   |
+    """)
+
+# Key Budget Changes
 with st.expander("📢 Key Changes in Budget 2025 vs 2024"):
     st.markdown("""
-    - **No Income Tax up to ₹12 lakh!**
-    - **Expanded Tax-Free Limit:** ₹4 lakh (vs ₹2.5 lakh earlier)
-    - **Lower tax rates for middle class:**  
-      - 5% up to ₹8 lakh (vs ₹5 lakh earlier)  
-      - New **10% slab for ₹8-12 lakh** (previously 20-30%)  
-      - Progressive slabs: 15%, 20%, 25% for ₹12-24 lakh  
-    - **Rebates:** Zero tax if income ≤ ₹12 lakh after rebates  
+    ### 🔹 Major Tax Reforms:
+    - **No Income Tax for incomes upto ₹12 lakh** after rebates! 💸
+    - **Basic Tax Exemption Increased:** ₹4 lakh (vs ₹3 lakh earlier)  
+    - **Lower Tax for Middle Class:**
+      - **5% tax up to ₹8 lakh** (vs ₹7 lakh earlier)  
+      - **New 10% slab for ₹8-12 lakh** (previously 20-30%)  
+      - **Progressive slabs:** 15%, 20%, 25% for ₹12-24 lakh  
+
+    ### 💰 Additional Benefits:
+    - **Rebate Limit Increased:** ₹12 lakh (vs ₹7 lakh earlier)  
+    - **Standard Deduction:** Now part of the new tax regime  
+    - **Middle-Class Boost:** Higher savings & simplified tax filing  
+
+    ### 📈 Economic Impact:
+    - **More Disposable Income → Higher Spending**  
+    - **Govt Revenue Considerations → Fiscal Deficit Watch**  
     """)
+
 
 # Footer
 st.markdown(
